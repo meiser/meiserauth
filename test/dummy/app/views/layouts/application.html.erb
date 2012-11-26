@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dummy</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<% if flash[:notice] %>
+      <p class="notice"><%= flash[:notice] %></p>
+    <% end %>
+    <% if flash[:error] %>
+      <p class="error"><%= flash[:error] %></p>
+    <% end %>
+<%= yield %>
+
+<% if current_user %>
+ <%= link_to "#{current_user.login} (#{current_user.email}) abmelden", meiserauth.session_path, :method => :delete, :class => "ym-button ym-delete" %>
+<% else %>
+ <%= link_to "Einloggen", meiserauth.new_sessions_path, :class => "ym-button ym-next" %>
+<% end %>
+
+
+<h1>Flash inspect</h1>
+<p><%= debug flash %>
+</body>
+</html>
