@@ -1,4 +1,5 @@
-require "meiserauth/engine"
+require 'meiserauth/engine'
+require 'net/ldap'
 
 module Meiserauth
 

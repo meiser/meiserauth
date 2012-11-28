@@ -28,12 +28,12 @@ module Meiserauth
   
         user.save(:validate => false)
         session[:user_id] = user.id
-        path = session[:return_to] || "/dashboard"
+        path = session[:return_to] || "/"
   
         redirect_to(path, :notice => t(".signed_in", :scope => :authentification))
       else
-        #flash[:error] = t(".invalid", :scope => :authentification)
-        redirect_to(new_session_path, notice => t(".invalid", :scope => :authentification))
+        flash[:error] = t(".invalid", :scope => :authentification)
+        redirect_to new_session_path
       end
     end
   
@@ -41,7 +41,7 @@ module Meiserauth
      user = User.find_by_id(session[:user_id])
      session[:user_id] = nil
      session[:return_to] = nil
-     redirect_to root_url, :notice => t(".signed_out", :scope => :authentification)
+     redirect_to "/", :notice => t(".signed_out", :scope => :authentification)
     end
   
   

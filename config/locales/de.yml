@@ -1,0 +1,18 @@
+de:
+ authentification:
+  signed_in: Erfolgreich angemeldet
+  signed_out: Erfolgreich abgemeldet
+  invalid: Nutzername, E-mail oder Passwort falsch
+  login:
+   header: Anmeldung
+ activerecord:
+  models:
+   meiserauth/user: Anwender
+  attributes:
+   meiserauth/user:
+     login_or_email: Kennung
+     password: Passwort
+ helpers:
+  submit:
+   meiserauth/user:
+    create: Anmelden

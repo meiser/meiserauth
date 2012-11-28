@@ -1,0 +1,5 @@
+<% if current_user %>
+  <%= link_to "#{current_user.login} (#{current_user.email}) abmelden", meiserauth.session_path, :method => :delete, :id => "login" %>
+ <% else %>
+  <%= link_to "Einloggen", meiserauth.new_session_path, :id => "login" %>
+<% end %>
