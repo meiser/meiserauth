@@ -14,7 +14,7 @@ module Meiserauth
     initializer 'meiserauth.app_controller' do |app|
      ActiveSupport.on_load(:action_controller) do
       extend Meiserauth::ClassMethods
-      include Meiserauth::InstanceMethods
+      include Meiserauth::InstanceMethods
       helper Meiserauth::ActionViewHelper
      end
     end

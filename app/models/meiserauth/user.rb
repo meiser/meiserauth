@@ -8,7 +8,9 @@ module Meiserauth
     
       serialize :preferences, OpenStruct
     
-    
+	  validates :email, :uniqueness => true
+	  validates :login, :uniqueness => true
+	
       before_save :convert_email
     
       def convert_email
