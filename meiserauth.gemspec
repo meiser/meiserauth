@@ -7,16 +7,15 @@ require "meiserauth/version"
 Gem::Specification.new do |s|
   s.name        = "meiserauth"
   s.version     = Meiserauth::VERSION
-  s.authors     = ["TODO: Your name"]
-  s.email       = ["TODO: Your email"]
-  s.homepage    = "TODO"
-  s.summary     = "TODO: Summary of Meiserauth."
-  s.description = "TODO: Description of Meiserauth."
-
+  s.authors     = ["Stephan Keller"]
+  s.email       = ["s.keller@meiser.de"]
+  s.homepage    = ""
+  s.summary     = "Authenticate with Rails an Active Directory"
+  s.description = "Authenticate with Rails an Active Directory"
   s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
   s.test_files = Dir["test/**/*"]
 
-  s.add_dependency "rails", "~> 3.2.8"
+  s.add_dependency "rails", "> 3.2.8"
   s.add_dependency "net-ldap"
   # s.add_dependency "jquery-rails"
   s.add_development_dependency "net-ldap"
